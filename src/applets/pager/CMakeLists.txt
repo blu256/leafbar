@@ -1,5 +1,5 @@
 ################################################################################
-# Skout - a DeskBar-style panel for TDE                                        #
+# Leafbar - a DeskBar-style panel for TDE                                      #
 # Copyright (C) 2023-2025 Philippe Mavridis <philippe.mavridis@yandex.com>     #
 #                                                                              #
 # Improvements and feedback are welcome!                                       #
@@ -19,16 +19,16 @@ link_directories(
     ${TQT_LIBRARY_DIRS}
 )
 
-### skoutapplet_systray (module) ###############################################
-tde_add_kpart( skoutapplet_pager AUTOMOC
+### leafbar_applet_systray (module) ############################################
+tde_add_kpart(leafbar_applet_pager AUTOMOC
   SOURCES
-    skout_pager.cpp
-    skout_pager_desktop.cpp
-    skout_pager_cfg.cpp
+    pager.cpp
+    pager_desktop.cpp
+    pager_cfg.cpp
 
   LINK
     tdeui-shared
-    skout-shared
+    leafbar-shared
     ${XDAMAGE_LIBRARIES}
     ${XCOMPOSITE_LIBRARIES}
 
@@ -37,9 +37,9 @@ tde_add_kpart( skoutapplet_pager AUTOMOC
 
 ### desktop file ###############################################################
 tde_create_translated_desktop(
-  SOURCE skout_pager.desktop
-  DESTINATION ${DATA_INSTALL_DIR}/skout/applets
-  PO_DIR skout-applets-desktops
+  SOURCE pager.desktop
+  DESTINATION ${DATA_INSTALL_DIR}/leafbar/applets
+  PO_DIR leafbar-applets-desktops
 )
 
 # kate: replace-tabs true; tab-width 2;

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Leafbar
+GenericName=Leafbar
+Comment=A DeskBar-style panel for TDE
+Type=Application
+Exec=leafbar
+Encoding=UTF-8
+Icon=leafbar
+Categories=Qt;TDE;Utility;X-TDE-Utilities-Desktop;
+StartupNotify=false
+Terminal=false

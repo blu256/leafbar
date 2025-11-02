@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Exec=tdecmshell leafbar_config.desktop
+Icon=leafbar
+X-DocPath=leafbar/index.html
+
+X-TDE-Library=leafbar
+X-TDE-Init=leafbar
+X-TDE-ParentApp=kcontrol
+
+Name=Leafbar
+Comment=Leafbar configuration
+
+Keywords=panel;kicker;leafbar
+
+Categories=Qt;TDE;X-TDE-settings-looknfeel;

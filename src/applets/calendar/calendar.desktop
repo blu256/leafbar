@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Calendar
+Comment=A simple calendar
+Type=LeafbarApplet
+Icon=date
+Copyright=Copyright © 2024-2025 Philippe Mavridis
+License=GPLv2
+
+X-TDE-Library=leafbar_applet_calendar

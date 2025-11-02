@@ -1,5 +1,5 @@
 ################################################################################
-# Skout - a DeskBar-style panel for TDE                                        #
+# Leafbar - a DeskBar-style panel for TDE                                      #
 # Copyright (C) 2023-2025 Philippe Mavridis <philippe.mavridis@yandex.com>     #
 #                                                                              #
 # Improvements and feedback are welcome!                                       #

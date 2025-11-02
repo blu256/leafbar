@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Skout - a DeskBar-style panel for TDE
+  Leafbar - a DeskBar-style panel for TDE
   Copyright (C) 2023-2025 Philippe Mavridis <philippe.mavridis@yandex.com>
 
   This program is free software: you can redistribute it and/or modify it under
@@ -19,7 +19,7 @@
 #ifndef _VERSION_H
 #define _VERSION_H
 
-namespace skout {
+namespace leafbar {
     static const char version[] = "1.0";
     static const char* copyright = "Copyright © 2023-2025 Philippe Mavridis";
 };

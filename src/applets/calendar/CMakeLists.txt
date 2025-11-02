@@ -1,5 +1,5 @@
 ################################################################################
-# Skout - a DeskBar-style panel for TDE                                        #
+# Leafbar - a DeskBar-style panel for TDE                                      #
 # Copyright (C) 2023-2025 Philippe Mavridis <philippe.mavridis@yandex.com>     #
 #                                                                              #
 # Improvements and feedback are welcome!                                       #
@@ -19,23 +19,23 @@ link_directories(
     ${TQT_LIBRARY_DIRS}
 )
 
-### skoutapplet_systray (module) ###############################################
-tde_add_kpart( skoutapplet_calendar AUTOMOC
+### leafbar_applet_systray (module) ############################################
+tde_add_kpart(leafbar_applet_calendar AUTOMOC
   SOURCES
-    skout_calendar.cpp
+    calendar.cpp
 
   LINK
     tdeui-shared
-    skout-shared
+    leafbar-shared
 
   DESTINATION ${PLUGIN_INSTALL_DIR}
 )
 
 ### desktop file ###############################################################
 tde_create_translated_desktop(
-  SOURCE skout_calendar.desktop
-  DESTINATION ${DATA_INSTALL_DIR}/skout/applets
-  PO_DIR skout-applets-desktops
+  SOURCE calendar.desktop
+  DESTINATION ${DATA_INSTALL_DIR}/leafbar/applets
+  PO_DIR leafbar-applets-desktops
 )
 
 # kate: replace-tabs true; tab-width 2;

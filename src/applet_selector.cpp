@@ -1,0 +1,112 @@
+/*******************************************************************************
+  Leafbar - a DeskBar-style panel for TDE
+  Copyright (C) 2023-2025 Philippe Mavridis <philippe.mavridis@yandex.com>
+
+  This program is free software: you can redistribute it and/or modify it under
+  the terms of the GNU General Public License as published by the Free Software
+  Foundation, either version 3 of the License, or (at your option) any later
+  version.
+
+  This program is distributed in the hope that it will be useful, but WITHOUT
+  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+  You should have received a copy of the GNU General Public License along with
+  this program. If not, see <http://www.gnu.org/licenses/>.
+
+  Improvements and feedback are welcome!
+*******************************************************************************/
+
+// TQt
+#include <tqfontmetrics.h>
+
+// TDE
+#include <tdeapplication.h>
+#include <kiconloader.h>
+#include <kdebug.h>
+
+// Leafbar
+#include "applet_selector.h"
+#include "applet_selector.moc"
+
+// stdlib
+#include <cassert>
+
+#define ICON_SIZE 24
+#define ICON_MARGIN 3
+
+/* --- LeafbarAppletItem class ------------------------------------------------ */
+LeafbarAppletItem::LeafbarAppletItem(AppletData &appletData)
+  : TQListBoxPixmap(tdeApp->iconLoader()->loadIcon(appletData.icon,
+                                                   TDEIcon::Panel, ICON_SIZE)),
+    m_data(appletData)
+{}
+
+int LeafbarAppletItem::height(const TQListBox *lb) const {
+    return height(lb->fontMetrics());
+}
+
+int LeafbarAppletItem::height(const TQFontMetrics fm) const {
+    return TQMAX((2 * ICON_MARGIN) + ICON_SIZE,
+                 (3 * ICON_MARGIN) + (2 * fm.height()));
+}
+
+void LeafbarAppletItem::paint(TQPainter *p) {
+    TQPoint pos(ICON_MARGIN, ICON_MARGIN);
+
+    TQFont f(p->font());
+    TQFontMetrics fm(f);
+
+    int h = height(fm);
+    TQRect pixRect(0, 0, (2 * ICON_MARGIN) + ICON_SIZE, h);
+    TQRect pix(pos, TQSize(ICON_SIZE, ICON_SIZE));
+    pix.moveCenter(pixRect.center());
+    p->drawPixmap(pix, *pixmap());
+
+    pos.setX(pos.x() + (2 * ICON_MARGIN) + ICON_SIZE);
+    pos.setY(fm.height() * 2 + ICON_MARGIN);
+
+    p->drawText(pos, m_data.comment);
+
+    pos.setY(pos.y() - fm.height() - ICON_MARGIN);
+
+    f.setBold(true);
+    p->setFont(f);
+    fm = TQFontMetrics(f);
+
+    p->drawText(pos, m_data.name);
+
+    pos.setY(pos.y() + ICON_MARGIN);
+    p->drawLine(pos.x(), pos.y(),
+                pos.x() + fm.width(m_data.name), pos.y());
+}
+
+/* --- LeafbarAppletSelector class -------------------------------------------- */
+LeafbarAppletSelector::LeafbarAppletSelector(TQWidget *parent, const char *name)
+  : TDEActionSelector(parent, name)
+{
+    connect(this, TQ_SIGNAL(added(TQListBoxItem *)), TQ_SIGNAL(changed()));
+    connect(this, TQ_SIGNAL(removed(TQListBoxItem *)), TQ_SIGNAL(changed()));
+    connect(this, TQ_SIGNAL(movedUp(TQListBoxItem *)), TQ_SIGNAL(changed()));
+    connect(this, TQ_SIGNAL(movedDown(TQListBoxItem *)), TQ_SIGNAL(changed()));
+
+    connect(selectedListBox(), TQ_SIGNAL(highlighted(int)),
+                               TQ_SIGNAL(activeSelectionChanged()));
+}
+
+void LeafbarAppletSelector::insertApplet(AppletData &applet) {
+    availableListBox()->insertItem(new LeafbarAppletItem(applet));
+}
+
+void LeafbarAppletSelector::insertActiveApplet(AppletData &applet, int index) {
+    selectedListBox()->insertItem(new LeafbarAppletItem(applet), index);
+}
+
+bool LeafbarAppletSelector::selectedApplet(AppletData& applet)
+{
+    auto sel = static_cast<LeafbarAppletItem *>(selectedListBox()->selectedItem());
+    if (!sel) return false;
+    applet = sel->data();
+    return true;
+}
+
+/* kate: replace-tabs true; tab-width 4; */

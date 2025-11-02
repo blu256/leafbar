@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
 <!DOCTYPE book PUBLIC "-//KDE//DTD DocBook XML V4.2-Based Variant V1.1//EN"
 "dtd/kdex.dtd" [
-  <!ENTITY skout "<application>Skout</application>">
-  <!ENTITY kappname "&skout;">
+  <!ENTITY leafbar "<application>Leafbar</application>">
+  <!ENTITY kappname "&leafbar;">
   <!ENTITY % addindex "IGNORE">
   <!ENTITY % English "INCLUDE">
 ]>
@@ -10,13 +10,13 @@
 <book lang="&language;">
 
 <bookinfo>
-<title>The &skout; Handbook</title>
+<title>The &leafbar; Handbook</title>
 
 <authorgroup>
 <author>
 <firstname>Philippe</firstname>
 <surname>Mavridis</surname>
-<address><email>mavridisf@gmail.com</email></address>
+<address><email>philippe.mavridis@yandex.com</email></address>
 </author>
 
 <!-- TRANS:ROLES_OF_TRANSLATORS -->
@@ -36,12 +36,12 @@
 
 <abstract>
 <para>
-&skout; is a &tde; desktop panel which follows the philosophy of the BeOS Deskbar.
+&leafbar; is a &tde; desktop panel which follows the philosophy of the BeOS Deskbar.
 </para>
 </abstract>
 
 <keywordset>
-<keyword>Skout</keyword>
+<keyword>Leafbar</keyword>
 <keyword>Kicker</keyword>
 <keyword>panel</keyword>
 <keyword>BeOS</keyword>
@@ -59,7 +59,7 @@
 <title>Introduction</title>
 
 <para>
-&skout; is a desktop panel for the Trinity Desktop Environment inspired by the BeOS Deskbar.
+&leafbar; is a desktop panel for the Trinity Desktop Environment inspired by the BeOS Deskbar.
 </para>
 
 <para>
@@ -77,24 +77,24 @@ The panel comes with its own set of applets and is not currently compatible with
 </itemizedlist>
 
 <para>
-To enable &skout;, go to the <menuchoice><guimenu>Appearance &amp; Themes</guimenu> <guisubmenu>&skout;</guisubmenu></menuchoice> section of &kcontrolcenter; and select <guilabel>Start Skout automatically on startup</guilabel>. If you want &skout; to replace the &kicker; panel, also select <guilabel>Replace Kicker panel</guilabel>. Please refer to the <link
+To enable &leafbar;, go to the <menuchoice><guimenu>Appearance &amp; Themes</guimenu> <guisubmenu>&leafbar;</guisubmenu></menuchoice> section of &kcontrolcenter; and select <guilabel>Start Leafbar automatically on startup</guilabel>. If you want &leafbar; to replace the &kicker; panel, also select <guilabel>Replace Kicker panel</guilabel>. Please refer to the <link
 linkend="config">Configuration module</link> section to learn more about the available options.
 </para>
 
 </chapter>
 
-<chapter id="skout-panel">
-<title>The &skout; panel</title>
+<chapter id="leafbar-panel">
+<title>The &leafbar; panel</title>
 
 <para>
-The Skout panel by default resides in the top right corner of the screen and contains the menu button and some applets, such as the system tray and the task manager.
+The Leafbar panel by default resides in the top right corner of the screen and contains the menu button and some applets, such as the system tray and the task manager.
 </para>
 
-<sect1 id="skout-menu">
-<title>&skout; menu</title>
+<sect1 id="leafbar-menu">
+<title>&leafbar; menu</title>
 
 <para>
-The &skout; menu button is the topmost widget in the &skout; panel. It's not actually an applet, but a fixed element of the layout.
+The &leafbar; menu button is the topmost widget in the &leafbar; panel. It's not actually an applet, but a fixed element of the layout.
 </para>
 
 <para>
@@ -105,7 +105,7 @@ Clicking on the menu button brings up the menu. Here you will find all your appl
 You can use either the mouse or the keyboard to navigate through the menu entries. The latter is achieved using <keycap>Tab</keycap> and <keycombo action="simul">&Shift;<keycap>Tab</keycap></keycombo> to go through the entries and <keycap>Enter</keycap> to select the needed entry. <keycap>Escape</keycap> closes the currently open (sub)menu.
 </para>
 
-<sect2 id="skout-menu-search">
+<sect2 id="leafbar-menu-search">
 <title>Searching</title>
 <para>
 If you start typing on the keyboard, you will notice that a small search box appears at the bottom of the menu with the phrase that you have typed. You will also notice that menu items which don't match the search terms are disabled. This is a quick way to find the menu entry that you are looking for.
@@ -125,10 +125,10 @@ By pressing <keycap>Escape</keycap> you can cancel the current search. This clea
 
 </sect2>
 
-<sect2 id="skout-menu-context-menu">
+<sect2 id="leafbar-menu-context-menu">
 <title>The context menu</title>
 <para>
-Clicking the &RMB; on the menu button brings up the &skout; context menu, which contains some useful actions.
+Clicking the &RMB; on the menu button brings up the &leafbar; context menu, which contains some useful actions.
 </para>
 
 <variablelist>
@@ -143,10 +143,10 @@ Opens the &tde; menu editor, allowing you to edit the items in the menu. Changes
 </varlistentry>
 
 <varlistentry>
-<term><guimenuitem>&skout; Preferences</guimenuitem></term>
+<term><guimenuitem>&leafbar; Preferences</guimenuitem></term>
 <listitem>
 <para>
-Opens the &skout; configuration module. Consult the <link
+Opens the &leafbar; configuration module. Consult the <link
 linkend="config">Configuration module</link> section to learn more about it.
 </para>
 </listitem>
@@ -161,10 +161,10 @@ This is a standard Help submenu which contains the following items:
 <variablelist>
 
 <varlistentry>
-<term><guimenuitem>&skout; Handbook</guimenuitem></term>
+<term><guimenuitem>&leafbar; Handbook</guimenuitem></term>
 <listitem>
 <para>
-Opens the &skout; handbook in &khelpcenter; (you're reading it).
+Opens the &leafbar; handbook in &khelpcenter; (you're reading it).
 </para>
 </listitem>
 </varlistentry>
@@ -197,7 +197,7 @@ Opens a dialog allowing you to change the language of the application independen
 </varlistentry>
 
 <varlistentry>
-<term><guimenuitem>About &skout;</guimenuitem></term>
+<term><guimenuitem>About &leafbar;</guimenuitem></term>
 <listitem>
 <para>
 Opens an about dialog with information about this program.
@@ -232,23 +232,23 @@ Opens an about dialog with information about the amazing Trinity Desktop Environ
 <title>Configuration module</title>
 
 <para>
-The &skout; configuration module can be invoked either from &kcontrolcenter; or from the context menu of the &skout; menu button. It provides settings for the &skout; panel as well as applet configuration.
+The &leafbar; configuration module can be invoked either from &kcontrolcenter; or from the context menu of the &leafbar; menu button. It provides settings for the &leafbar; panel as well as applet configuration.
 </para>
 
 <sect1 id="config-general">
 <title>General tab</title>
 
 <para>
-Here you can find some general settings affecting &skout;.
+Here you can find some general settings affecting &leafbar;.
 </para>
 
 <variablelist>
 
 <varlistentry>
-<term>Start &skout; automatically on startup</term>
+<term>Start &leafbar; automatically on startup</term>
 <listitem>
 <para>
-Whether &skout; should automatically start when the user session starts. If checked, &skout; will autostart itself when you log in. By default it won't replace &kicker;, the &tde; panel; see the next option for this.
+Whether &leafbar; should automatically start when the user session starts. If checked, &leafbar; will autostart itself when you log in. By default it won't replace &kicker;, the &tde; panel; see the next option for this.
 </para>
 </listitem>
 </varlistentry>
@@ -257,7 +257,7 @@ Whether &skout; should automatically start when the user session starts. If chec
 <term>Replace &kicker; panel</term>
 <listitem>
 <para>
-Whether &skout; should replace &kicker;, the &tde; panel, when it starts.
+Whether &leafbar; should replace &kicker;, the &tde; panel, when it starts.
 </para>
 </listitem>
 </varlistentry>
@@ -279,7 +279,7 @@ Some settings which affect the geometry of the panel.
 <term>Panel position</term>
 <listitem>
 <para>
-Which corner of the screen &skout; will attach itself to; at present top right (default) and top left are available.
+Which corner of the screen &leafbar; will attach itself to; at present top right (default) and top left are available.
 </para>
 </listitem>
 </varlistentry>
@@ -322,7 +322,7 @@ To configure an applet, select it and press the <guibutton>Preferences</guibutto
 <term>Panel position</term>
 <listitem>
 <para>
-Which corner of the screen &skout; will attach itself to; at present top right (default) and top left are available.
+Which corner of the screen &leafbar; will attach itself to; at present top right (default) and top left are available.
 </para>
 </listitem>
 </varlistentry>
@@ -451,7 +451,7 @@ To pin or unpin a grouper click the &RMB; on the grouper and select <guimenuitem
 </para>
 
 <para>
-If you don't see an option to pin the current application, then &skout; was unable to find the application launcher. Ensure that the application is properly installed or try filing a bug either to its developer or the author of &skout; (see the <link
+If you don't see an option to pin the current application, then &leafbar; was unable to find the application launcher. Ensure that the application is properly installed or try filing a bug either to its developer or the author of &leafbar; (see the <link
 linkend="bugs">Reporting bugs</link> section).
 </para>
 
@@ -482,7 +482,7 @@ You can customize the grouper as if it was an ordinary launcher. Click the &RMB;
 </para>
 
 <para>
-If you don't see a <guimenuitem>Properties</guimenuitem> item in the menu, then &skout; was unable to find the launcher associated with the application. Ensure that the application is properly installed or try filing a bug either to its developer or the author of &skout; (see the <link
+If you don't see a <guimenuitem>Properties</guimenuitem> item in the menu, then &leafbar; was unable to find the launcher associated with the application. Ensure that the application is properly installed or try filing a bug either to its developer or the author of &leafbar; (see the <link
 linkend="bugs">Reporting bugs</link> section).
 </para>
 
@@ -549,7 +549,7 @@ If this option is checked, groupers that don't have a preference set will be exp
 <term>Automatically save grouper states</term>
 <listitem>
 <para>
-If this option is checked, expanding or collapsing a grouper automatically saves the current state as the preferred for this grouper. Use this option if you want &skout; to remember grouper states across sessions. Beware that the config file might grow big depending on how many different applications &skout; will ever see.
+If this option is checked, expanding or collapsing a grouper automatically saves the current state as the preferred for this grouper. Use this option if you want &leafbar; to remember grouper states across sessions. Beware that the config file might grow big depending on how many different applications &leafbar; will ever see.
 </para>
 </listitem>
 </varlistentry>
@@ -583,7 +583,7 @@ If checked, groupers will use slightly bigger application icons in relation to t
 <sect1 id="calendar">
 <title>Calendar</title>
 
-<para>The calendar applet is a simple calendar which doesn't to much. It embeds a standard &tde; calendar widget into &skout;.</para>
+<para>The calendar applet is a simple calendar which doesn't to much. It embeds a standard &tde; calendar widget into &leafbar;.</para>
 
 <para>You can click on a day to select it. The currently selected day will be highlighed. Today is always marked with a box even when you select another day.</para>
 
@@ -591,7 +591,7 @@ If checked, groupers will use slightly bigger application icons in relation to t
 
 <tip>
 <title>Info for developers</title>
-<para>Calendar is the simplest example of a &skout; applet, comprehensively documented through comments.</para>
+<para>Calendar is the simplest example of a &leafbar; applet, comprehensively documented through comments.</para>
 </tip>
 
 </sect1>
@@ -606,9 +606,9 @@ If checked, groupers will use slightly bigger application icons in relation to t
 <sect1 id="files">
 <title>Configuration files</title>
 
-<para>The main &skout; configuration is stored in the <filename>$TDEHOME/share/config/skoutrc</filename> file.</para>
+<para>The main &leafbar; configuration is stored in the <filename>$TDEHOME/share/config/leafbarrc</filename> file.</para>
 
-<para>Applet configuration is generally stored in <filename>$TDEHOME/share/config/skoutappletrc</filename>.</para>
+<para>Applet configuration is generally stored in <filename>$TDEHOME/share/config/leafbarappletrc</filename>.</para>
 
 </sect1>
 
@@ -622,7 +622,7 @@ Meanwhile, please refer to the source code of the Calendar applet, a commented, 
 </para>
 
 <para>
-In general you need to subclass the SkoutApplet class, export some C functions and install a .desktop file in order to make your applet usable by &skout;, much like you would develop a Kicker applet or an ordinary plugin under &tde;.
+In general you need to subclass the LeafbarApplet class, export some C functions and install a .desktop file in order to make your applet usable by &leafbar;, much like you would develop a Kicker applet or an ordinary plugin under &tde;.
 </para>
 
 <para>If you have any questions, feel free to contact the author.</para>
@@ -634,7 +634,7 @@ In general you need to subclass the SkoutApplet class, export some C functions a
 <chapter id="bugs">
 <title>Reporting bugs</title>
 
-<para>Please direct any questions and report any problems with &skout; or its documentation to its author.</para>
+<para>Please direct any questions and report any problems with &leafbar; or its documentation to its author.</para>
 
 </chapter>
 

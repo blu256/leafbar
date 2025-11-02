@@ -1,11 +1,11 @@
 ################################################################################
-# Skout - a DeskBar-style panel for TDE                                        #
+# Leafbar - a DeskBar-style panel for TDE                                      #
 # Copyright (C) 2023-2025 Philippe Mavridis <philippe.mavridis@yandex.com>     #
 #                                                                              #
 # Improvements and feedback are welcome!                                       #
 # This software is licensed under the terms of the GNU GPL v3 license.         #
 #                                                                              #
-# Build file for dmctl (needed for Skout Menu)                                 #
+# Build file for dmctl (needed for Leafbar Menu)                                 #
 # dmctl is a part of tdmlib                                                    #
 ################################################################################
 

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Task Manager
+Comment=A window list on steroids
+Type=LeafbarApplet
+Icon=taskbar
+
+X-TDE-Library=leafbar_applet_taskman
+X-TDE-UniqueApplet=true

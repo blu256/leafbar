@@ -27,56 +27,56 @@ msgid ""
 "Your emails"
 msgstr ""
 
-#: skout_task.cpp:122
+#: task.cpp:122
 msgid "Stays on top"
 msgstr ""
 
-#: skout_task.cpp:126
+#: task.cpp:126
 msgid "Stays on bottom"
 msgstr ""
 
-#: skout_task.cpp:132
+#: task.cpp:132
 msgid "Hide into tray"
 msgstr ""
 
-#: skout_task.cpp:137
+#: task.cpp:137
 msgid "Fullscreen"
 msgstr ""
 
-#: skout_task.cpp:144
+#: task.cpp:144
 msgid "Minimize"
 msgstr ""
 
-#: skout_task.cpp:148
+#: task.cpp:148
 msgid "Maximize"
 msgstr ""
 
-#: skout_task.cpp:166
+#: task.cpp:166
 msgid "Unable to send \"%1\" to tray"
 msgstr ""
 
-#: skout_task_container.cpp:157
+#: task_container.cpp:157
 msgid "TDE Desktop"
 msgstr ""
 
-#: skout_task_grouper.cpp:157
+#: task_grouper.cpp:157
 msgid "Minimize all"
 msgstr ""
 
-#: skout_task_grouper.cpp:165
+#: task_grouper.cpp:165
 msgid "Unpin application"
 msgstr ""
 
-#: skout_task_grouper.cpp:169
+#: task_grouper.cpp:169
 msgid "Pin application"
 msgstr ""
 
-#: skout_task_grouper.cpp:209
+#: task_grouper.cpp:209
 #, c-format
 msgid "Unable to launch %1"
 msgstr ""
 
-#: skout_task_manager.cpp:58
+#: task_manager.cpp:58
 msgid ""
 "The task list provides access to application windows, common window "
 "operations and pinned applications."

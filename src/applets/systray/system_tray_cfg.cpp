@@ -1,0 +1,66 @@
+/*******************************************************************************
+  Leafbar - a DeskBar-style panel for TDE
+  Copyright (C) 2023-2025 Philippe Mavridis <philippe.mavridis@yandex.com>
+
+  This program is free software: you can redistribute it and/or modify it under
+  the terms of the GNU General Public License as published by the Free Software
+  Foundation, either version 3 of the License, or (at your option) any later
+  version.
+
+  This program is distributed in the hope that it will be useful, but WITHOUT
+  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+  FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+  You should have received a copy of the GNU General Public License along with
+  this program. If not, see <http://www.gnu.org/licenses/>.
+
+  Improvements and feedback are welcome!
+*******************************************************************************/
+
+// TQt
+#include <tqlayout.h>
+#include <tqcheckbox.h>
+
+// TDE
+#include <tdeconfig.h>
+#include <tdelocale.h>
+
+// Leafbar
+#include "system_tray_cfg.h"
+#include "system_tray_cfg.moc"
+
+LeafbarSysTrayConfig::LeafbarSysTrayConfig(TQWidget *parent, const TQString& cfg)
+: LeafbarAppletConfig(parent, cfg)
+{
+    new TQVBoxLayout(this);
+    m_enableStatus = new TQCheckBox(i18n("Enable status widget"), this);
+
+    layout()->add(m_enableStatus);
+
+    connect(m_enableStatus, TQ_SIGNAL(toggled(bool)), TQ_SIGNAL(changed()));
+}
+
+LeafbarSysTrayConfig::~LeafbarSysTrayConfig()
+{
+}
+
+void LeafbarSysTrayConfig::reset()
+{
+    m_enableStatus->setChecked(true);
+}
+
+void LeafbarSysTrayConfig::load()
+{
+    auto cfg = config();
+    cfg->setGroup("SysTray");
+    m_enableStatus->setChecked(cfg->readBoolEntry("EnableStatusWidget", true));
+}
+
+void LeafbarSysTrayConfig::save()
+{
+    auto cfg = config();
+    cfg->setGroup("SysTray");
+    cfg->writeEntry("EnableStatusWidget", m_enableStatus->isChecked());
+    cfg->sync();
+}
+
+/* kate: replace-tabs true; tab-width 4; */

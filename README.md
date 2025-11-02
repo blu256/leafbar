@@ -1,11 +1,11 @@
-Skout
------
+Leafbar
+-------
 
-Skout is a panel for TDE in the spirit of Deskbar, the desktop panel of BeOS and now Haiku.
+Leafbar is a panel for TDE in the spirit of Deskbar, the desktop panel of BeOS and now Haiku.
 
-![Screenshot of Skout in top right corner of TDE](doc/en/screenshot.png)
+![Screenshot of Leafbar in top right corner of TDE](doc/en/screenshot.png)
 
-Despite undergoing heavy development and being subject to changes, Skout is stable
+Despite undergoing heavy development and being subject to changes, Leafbar is stable
 enough to be daily-driven.
 
 Features:

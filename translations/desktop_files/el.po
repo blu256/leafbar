@@ -1,14 +1,14 @@
-# translation of skout-desktops.po to Ελληνικά
+# translation of leafbar-desktops.po to Ελληνικά
 # This file is put in the public domain.
 #
-# Mavridis Philippe <mavridisf@gmail.com>, 2023.
+# Philippe Mavridis <philippe.mavridis@yandex.com>, 2025.
 msgid ""
 msgstr ""
-"Project-Id-Version: skout-desktops\n"
+"Project-Id-Version: leafbar-desktops\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-12-30 23:02+0200\n"
-"PO-Revision-Date: 2023-12-30 23:09+0200\n"
-"Last-Translator: Mavridis Philippe <mavridisf@gmail.com>\n"
+"PO-Revision-Date: 2025-11-02 12:21+0200\n"
+"Last-Translator: Philippe Mavridis <philippe.mavridis@yandex.com>\n"
 "Language-Team: Ελληνικά\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -19,22 +19,22 @@ msgstr ""
 #. Name
 #. GenericName
 #. Name
-#: skout.desktop:2 skout.desktop:3 skout_config.desktop:11
-msgid "Skout"
-msgstr "Skout"
+#: leafbar.desktop:2 leafbar.desktop:3 leafbar_config.desktop:11
+msgid "Leafbar"
+msgstr "Leafbar"
 
 #. Comment
-#: skout.desktop:4
-msgid "A Be-like panel for TDE"
-msgstr "Ένας πίνακας σε στυλ BeOS για το TDE"
+#: leafbar.desktop:4
+msgid "A DeskBar-style panel for TDE"
+msgstr "Ένας πίνακας σε στυλ BeOS Desbkar για το TDE"
 
 #. Comment
-#: skout_config.desktop:12
-msgid "Skout configuration (Be-style panel)"
-msgstr "Ρύθμιση Skout (πίνακας σε στυλ BeOS)"
+#: leafbar_config.desktop:12
+msgid "Leafbar configuration"
+msgstr "Ρυθμίσεις Leafbar"
 
 #. Keywords
-#: skout_config.desktop:14
-msgid "panel;kicker;skout"
-msgstr "πίνακας;kicker;skout"
+#: leafbar_config.desktop:14
+msgid "panel;kicker;leafbar"
+msgstr "πίνακας;kicker;leafbar"
 

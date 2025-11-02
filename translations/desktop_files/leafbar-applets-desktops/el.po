@@ -1,0 +1,58 @@
+# translation of leafbar-applets-desktops.po to Ελληνικά
+# This file is put in the public domain.
+#
+# Philippe Mavridis <philippe.mavridis@yandex.com>, 2025.
+msgid ""
+msgstr ""
+"Project-Id-Version: leafbar-applets-desktops\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-30 22:52+0200\n"
+"PO-Revision-Date: 2025-11-02 12:24+0200\n"
+"Last-Translator: Philippe Mavridis <philippe.mavridis@yandex.com>\n"
+"Language-Team: Ελληνικά\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Name
+#: calendar/calendar.desktop:2
+msgid "Calendar"
+msgstr "Ημερολόγιο"
+
+#. Comment
+#: calendar/calendar.desktop:3
+msgid "A simple calendar"
+msgstr "Ένα απλό ημερολόγιο"
+
+#. Name
+#: pager/pager.desktop:2
+msgid "Pager"
+msgstr "Pager"
+
+#. Comment
+#: pager/pager.desktop:3
+msgid "A virtual desktops pager applet"
+msgstr "Εφαρμογίδιο προβολής και εναλλαγής εικονικών επιφανειών εργασίας"
+
+#. Name
+#: systray/system_tray.desktop:2
+msgid "System Tray"
+msgstr "Πλαίσιο συστήματος"
+
+#. Comment
+#: systray/system_tray.desktop:3
+msgid "Area for resident application icons"
+msgstr "Χώρος για εφαρμογές παρασκηνίου"
+
+#. Name
+#: taskman/task_manager.desktop:2
+msgid "Task Manager"
+msgstr "Λίστα εργασιών"
+
+#. Comment
+#: taskman/task_manager.desktop:3
+msgid "A window list on steroids"
+msgstr "Ένας ισχυρός διαχειριστής εργασιών"
+

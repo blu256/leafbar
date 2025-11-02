@@ -1,5 +1,5 @@
 ################################################################################
-# Skout - a DeskBar-style panel for TDE                                        #
+# Leafbar - a DeskBar-style panel for TDE                                      #
 # Copyright (C) 2023-2025 Philippe Mavridis <philippe.mavridis@yandex.com>     #
 #                                                                              #
 # Improvements and feedback are welcome!                                       #
@@ -19,15 +19,15 @@ link_directories(
     ${TQT_LIBRARY_DIRS}
 )
 
-### libskout (library) #########################################################
+### libleafbar (library) #########################################################
 tde_add_library(
-  skout SHARED AUTOMOC
+  leafbar SHARED AUTOMOC
 
   SOURCES
-    skout_applet.cpp
-    skout_applet_panel_extension.cpp
-    skout_applet_config.cpp
-    skoutsettings.kcfgc
+    applet.cpp
+    applet_panel_extension.cpp
+    applet_config.cpp
+    settings.kcfgc
 
   LINK
     tdecore-shared
@@ -35,50 +35,50 @@ tde_add_library(
   DESTINATION ${LIB_INSTALL_DIR}
 )
 
-### skout (executable) #########################################################
-set(SKOUT_OPTIONAL_SOURCES "")
+### leafbar (executable) #########################################################
+set(LEAFBAR_OPTIONAL_SOURCES "")
 if (${WITH_KICKER_APPLETS})
-  list(APPEND SKOUT_OPTIONAL_SOURCES
-    skout_kicker_applet.cpp
+  list(APPEND LEAFBAR_OPTIONAL_SOURCES
+    kicker_applet.cpp
     kickerSettings.kcfgc
   )
 endif()
 
 tde_add_executable(
-  skout AUTOMOC
+  leafbar AUTOMOC
 
   SOURCES
     main.cpp
-    skout.cpp
-    skout_panel.cpp
-    skout_appletdb.cpp
-    skout_menu_button.cpp
-    skout_menu.cpp
-    skout_root_menu.cpp
-    skout_settings_menu.cpp
-    skoutiface.skel
-    ${SKOUT_OPTIONAL_SOURCES}
+    application.cpp
+    panel.cpp
+    applet_db.cpp
+    menu_button.cpp
+    menu.cpp
+    root_menu.cpp
+    settings_menu.cpp
+    leafbariface.skel
+    ${LEAFBAR_OPTIONAL_SOURCES}
 
   LINK
     tdecore-shared
     tdeui-shared
     tdeio-shared
-    skout-shared
+    leafbar-shared
     dmctl-static
 
   DESTINATION ${BIN_INSTALL_DIR}
 )
 
-### kcm_skout (module) #########################################################
+### kcm_leafbar (module) #########################################################
 tde_add_kpart(
-  kcm_skout AUTOMOC
+  kcm_leafbar AUTOMOC
 
   SOURCES
-    tdecm_skout.cpp
-    skout_appletdb.cpp
-    skout_applet_selector.cpp
-    skout_applet_config_dialog.cpp
-    skoutsettings.kcfgc
+    tdecm_leafbar.cpp
+    applet_db.cpp
+    applet_selector.cpp
+    applet_config_dialog.cpp
+    settings.kcfgc
 
   LINK
     tdecore-shared
@@ -94,16 +94,14 @@ add_subdirectory(external/dmctl)
 
 ### headers ####################################################################
 install(
-  FILES
-    skout_applet.h
-
-  DESTINATION ${INCLUDE_INSTALL_DIR}
+  FILES applet.h applet_config.h
+  DESTINATION ${INCLUDE_INSTALL_DIR}/leafbar/
 )
 
 ### translated desktop files ###################################################
-tde_create_translated_desktop(skout.desktop
-    PO_DIR skout-desktops)
-tde_create_translated_desktop(skout_config.desktop
-    PO_DIR skout-desktops)
+tde_create_translated_desktop(leafbar.desktop
+    PO_DIR leafbar-desktops)
+tde_create_translated_desktop(leafbar_config.desktop
+    PO_DIR leafbar-desktops)
 
 # kate: replace-tabs true; tab-width 2;

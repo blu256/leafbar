@@ -1,5 +1,5 @@
 ################################################################################
-# Skout - a DeskBar-style panel for TDE                                        #
+# Leafbar - a DeskBar-style panel for TDE                                      #
 # Copyright (C) 2023-2025 Philippe Mavridis <philippe.mavridis@yandex.com>     #
 #                                                                              #
 # Improvements and feedback are welcome!                                       #
@@ -8,11 +8,11 @@
 
 tde_l10n_auto_add_subdirectories( )
 
-tde_l10n_create_template( "messages/skout" )
+tde_l10n_create_template( "messages/leafbar" )
 
 tde_l10n_create_template(
-    CATALOG "desktop_files/skout-desktops"
-    SOURCES skout.desktop skout_config.desktop
+    CATALOG "desktop_files/leafbar-desktops"
+    SOURCES leafbar.desktop leafbar_config.desktop
 )
 
 # kate: replace-tabs true; tab-width 2;

@@ -1,0 +1,4 @@
+File=leafbar.kcfg
+ClassName=LeafbarSettings
+Singleton=true
+Mutators=true

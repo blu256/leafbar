@@ -1,5 +1,5 @@
 /*******************************************************************************
-  Skout - a DeskBar-style panel for TDE
+  Leafbar - a DeskBar-style panel for TDE
   Copyright (C) 2023-2025 Philippe Mavridis <philippe.mavridis@yandex.com>
 
   This program is free software: you can redistribute it and/or modify it under
@@ -24,10 +24,10 @@
 #include <tdelocale.h>
 #include <kdebug.h>
 
-// Skout
-#include "skout.h"
-#include "skoutsettings.h"
-#include "skout_panel.h" // PanelPosition
+// Leafbar
+#include "application.h"
+#include "settings.h"
+#include "panel.h" // PanelPosition
 #include "version.h"
 
 static const char description[] = I18N_NOOP("a DeskBar-style panel for TDE");
@@ -39,16 +39,16 @@ static TDECmdLineOptions options[] = {
 };
 
 int main(int argc, char **argv) {
-    TDEAboutData about("skout", I18N_NOOP("Skout"), skout::version, description,
-                       TDEAboutData::License_GPL_V3, skout::copyright,
-                       I18N_NOOP("Skout is a DeskBar-style panel for TDE"));
+    TDEAboutData about("leafbar", I18N_NOOP("Leafbar"), leafbar::version, description,
+                       TDEAboutData::License_GPL_V3, leafbar::copyright,
+                       I18N_NOOP("Leafbar is a DeskBar-style panel for TDE"));
 
     TDECmdLineArgs::init(argc, argv, &about);
     TDECmdLineArgs::addCmdLineOptions(options);
 
     TDEUniqueApplication::addCmdLineOptions();
     if (!TDEUniqueApplication::start()) {
-        fprintf(stderr, "Skout is already running!\n");
+        fprintf(stderr, "Leafbar is already running!\n");
         exit(0);
     }
 
@@ -61,10 +61,8 @@ int main(int argc, char **argv) {
         pos = PanelPosition::TopRight;
     args->clear();
 
-    Skout *app = new Skout(pos);
-    int ret = app->exec();
-    delete app;
-    return ret;
+    LeafbarApp app(pos);
+    return app.exec();
 }
 
 /* kate: replace-tabs true; tab-width 4; */

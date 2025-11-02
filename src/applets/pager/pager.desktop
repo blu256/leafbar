@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Pager
+Comment=A pager applet
+Type=LeafbarApplet
+Icon=kpager
+Copyright=Copyright © 2025 Philippe Mavridis
+License=GPLv2
+X-TDE-Library=leafbar_applet_pager

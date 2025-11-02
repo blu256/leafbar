@@ -27,11 +27,11 @@ msgid ""
 "Your emails"
 msgstr ""
 
-#: applets/calendar/skout_calendar.cpp:76
+#: applets/calendar/calendar.cpp:76
 msgid "This is a calendar applet."
 msgstr ""
 
-#: applets/systray/skout_status_widget.cpp:60
+#: applets/systray/status_widget.cpp:60
 msgid ""
 "<qt><p>The clock displays the current time.<ul><li>Click on it to see a "
 "calendar.</li><li>Press the middle mouse button to copy the time and/or date."
@@ -39,121 +39,121 @@ msgid ""
 "ul></qt>"
 msgstr ""
 
-#: applets/systray/skout_status_widget.cpp:131
+#: applets/systray/status_widget.cpp:131
 msgid "Calendar"
 msgstr ""
 
-#: applets/systray/skout_status_widget.cpp:138
+#: applets/systray/status_widget.cpp:138
 msgid "Copy..."
 msgstr ""
 
-#: applets/systray/skout_status_widget.cpp:155
+#: applets/systray/status_widget.cpp:155
 msgid "&Adjust Date && Time..."
 msgstr ""
 
-#: applets/systray/skout_status_widget.cpp:157
+#: applets/systray/status_widget.cpp:157
 msgid "Date && Time &Format..."
 msgstr ""
 
-#: applets/systray/skout_system_graph.cpp:64
+#: applets/systray/system_graph.cpp:64
 msgid ""
 "<qt><p>This graph monitors the <b>%1</b> sensor on this system.<ul><li>Click "
 "on it to launch KSysGuard.</li><li>Press the right mouse button to see a "
 "menu with useful functions.</li></ul></qt>"
 msgstr ""
 
-#: applets/systray/skout_system_graph.cpp:94
+#: applets/systray/system_graph.cpp:94
 msgid "Could not initialize sensor \"%1\"!"
 msgstr ""
 
-#: applets/systray/skout_system_graph.cpp:95
+#: applets/systray/system_graph.cpp:95
 msgid "Cannot connect to KSysGuard service."
 msgstr ""
 
-#: applets/systray/skout_system_graph.cpp:196
+#: applets/systray/system_graph.cpp:196
 msgid "Sensor \"%1\" has crashed!"
 msgstr ""
 
-#: applets/systray/skout_system_graph.cpp:197
+#: applets/systray/system_graph.cpp:197
 msgid "The KSysGuard service has stopped abruptly and could not be restarted."
 msgstr ""
 
-#: applets/systray/skout_system_graph.cpp:299
+#: applets/systray/system_graph.cpp:299
 msgid "%1: monitor is offline"
 msgstr ""
 
-#: applets/systray/skout_system_graph.cpp:332
+#: applets/systray/system_graph.cpp:332
 msgid "Launch..."
 msgstr ""
 
-#: applets/systray/skout_system_graph.cpp:359 skout_panel.cpp:249
+#: applets/systray/system_graph.cpp:359 leafbar_panel.cpp:249
 msgid "Unable to launch %1!"
 msgstr ""
 
-#: applets/systray/skout_system_graph.cpp:390
+#: applets/systray/system_graph.cpp:390
 msgid "Terminal Emulator"
 msgstr ""
 
-#: applets/systray/skout_system_tray.cpp:79
+#: applets/systray/system_tray.cpp:79
 msgid "Unable to acquire system tray!"
 msgstr ""
 
-#: applets/systray/skout_system_tray.cpp:82
+#: applets/systray/system_tray.cpp:82
 msgid ""
 "The system tray provides status information, quick access to some functions "
 "and a place to conveniently store application windows from the task list."
 msgstr ""
 
-#: applets/taskman/skout_task.cpp:122
+#: applets/taskman/task.cpp:122
 msgid "Stays on top"
 msgstr ""
 
-#: applets/taskman/skout_task.cpp:126
+#: applets/taskman/task.cpp:126
 msgid "Stays on bottom"
 msgstr ""
 
-#: applets/taskman/skout_task.cpp:132
+#: applets/taskman/task.cpp:132
 msgid "Hide into tray"
 msgstr ""
 
-#: applets/taskman/skout_task.cpp:137
+#: applets/taskman/task.cpp:137
 msgid "Fullscreen"
 msgstr ""
 
-#: applets/taskman/skout_task.cpp:144
+#: applets/taskman/task.cpp:144
 msgid "Minimize"
 msgstr ""
 
-#: applets/taskman/skout_task.cpp:148
+#: applets/taskman/task.cpp:148
 msgid "Maximize"
 msgstr ""
 
-#: applets/taskman/skout_task.cpp:166
+#: applets/taskman/task.cpp:166
 msgid "Unable to send \"%1\" to tray"
 msgstr ""
 
-#: applets/taskman/skout_task_container.cpp:157
+#: applets/taskman/task_container.cpp:157
 msgid "TDE Desktop"
 msgstr ""
 
-#: applets/taskman/skout_task_grouper.cpp:157
+#: applets/taskman/task_grouper.cpp:157
 msgid "Minimize all"
 msgstr ""
 
-#: applets/taskman/skout_task_grouper.cpp:165
+#: applets/taskman/task_grouper.cpp:165
 msgid "Unpin application"
 msgstr ""
 
-#: applets/taskman/skout_task_grouper.cpp:169
+#: applets/taskman/task_grouper.cpp:169
 msgid "Pin application"
 msgstr ""
 
-#: applets/taskman/skout_task_grouper.cpp:209
+#: applets/taskman/task_grouper.cpp:209
 #, c-format
 msgid "Unable to launch %1"
 msgstr ""
 
-#: applets/taskman/skout_task_manager.cpp:58
+#: applets/taskman/task_manager.cpp:58
 msgid ""
 "The task list provides access to application windows, common window "
 "operations and pinned applications."
@@ -205,77 +205,76 @@ msgid "Place panel in the top left corner"
 msgstr ""
 
 #: main.cpp:42
-msgid "Skout"
+msgid "Leafbar"
 msgstr ""
 
 #: main.cpp:44
-msgid "Skout is a Be-style panel for TDE"
+msgid "Leafbar is a Be-style panel for TDE"
 msgstr ""
 
-#: skout_menu_button.cpp:55
+#: menu_button.cpp:55
 msgid "Menu"
 msgstr ""
 
-#: skout_menu_button.cpp:58
-msgid "Skout Menu"
+#: menu_button.cpp:58
+msgid "Leafbar Menu"
 msgstr ""
 
-#: skout_menu_button.cpp:59
+#: menu_button.cpp:59
 msgid ""
-"The Skout Menu provides access to installed applications, locations and "
+"The Leafbar Menu provides access to installed applications, locations and "
 "common actions."
 msgstr ""
 
-#: skout_menu_button.cpp:81
+#: menu_button.cpp:81
 msgid "Edit menu"
 msgstr ""
 
-#: skout_menu_button.cpp:87
-msgid "Skout Preferences"
+#: menu_button.cpp:87
+msgid "Leafbar Preferences"
 msgstr ""
 
-#: skout_menu_button.cpp:92
+#: menu_button.cpp:92
 msgid "Help..."
 msgstr ""
 
-#: skout_panel.cpp:150 skout_panel.cpp:159 skout_panel.cpp:165
-#: skout_panel.cpp:177
+#: panel.cpp:150 panel.cpp:159 panel.cpp:165 panel.cpp:177
 msgid "Unable to load \"%1\" applet!"
 msgstr ""
 
-#: skout_panel.cpp:151 skout_panel.cpp:166
+#: panel.cpp:151 panel.cpp:166
 msgid "This is not a valid applet."
 msgstr ""
 
-#: skout_root_menu.cpp:69
+#: root_menu.cpp:69
 msgid "Recent documents"
 msgstr ""
 
-#: skout_root_menu.cpp:74
+#: root_menu.cpp:74
 msgid "Run command..."
 msgstr ""
 
-#: skout_root_menu.cpp:79
+#: root_menu.cpp:79
 msgid "Switch User"
 msgstr ""
 
-#: skout_root_menu.cpp:82
+#: root_menu.cpp:82
 msgid "Lock Session"
 msgstr ""
 
-#: skout_root_menu.cpp:88
+#: root_menu.cpp:88
 msgid "Log Out..."
 msgstr ""
 
-#: skout_root_menu.cpp:127
+#: root_menu.cpp:127
 msgid "Lock Current && Start New Session"
 msgstr ""
 
-#: skout_root_menu.cpp:131
+#: root_menu.cpp:131
 msgid "Start New Session"
 msgstr ""
 
-#: skout_root_menu.cpp:171
+#: root_menu.cpp:171
 msgid ""
 "<p>You have chosen to open another desktop session.<br>The current session "
 "will be hidden and a new login screen will be displayed.<br>An F-key is "
@@ -285,116 +284,116 @@ msgid ""
 "Panel and Desktop menus have actions for switching between sessions.</p>"
 msgstr ""
 
-#: skout_root_menu.cpp:182
+#: root_menu.cpp:182
 msgid "Warning - New Session"
 msgstr ""
 
-#: skout_root_menu.cpp:183
+#: root_menu.cpp:183
 msgid "&Start New Session"
 msgstr ""
 
-#: tdecm_skout.cpp:50
-msgid "Skout panel configuration module"
+#: tdecm_leafbar.cpp:50
+msgid "Leafbar panel configuration module"
 msgstr ""
 
-#: tdecm_skout.cpp:71
-msgid "kcm_skout"
+#: tdecm_leafbar.cpp:71
+msgid "kcm_leafbar"
 msgstr ""
 
-#: tdecm_skout.cpp:72
-msgid "SkoutConfig"
+#: tdecm_leafbar.cpp:72
+msgid "LeafbarConfig"
 msgstr ""
 
-#: tdecm_skout.cpp:78
+#: tdecm_leafbar.cpp:78
 msgid ""
-"<h1>Skout</h1> This control module can be used to enable and configure "
-"Skout. Skout is a Be-style panel for TDE. If you choose to use Skout, Kicker "
+"<h1>Leafbar</h1> This control module can be used to enable and configure "
+"Leafbar. Leafbar is a Be-style panel for TDE. If you choose to use Leafbar, Kicker "
 "will be automatically disabled."
 msgstr ""
 
-#: tdecm_skout.cpp:86
-msgid "Enable Skout"
+#: tdecm_leafbar.cpp:86
+msgid "Enable Leafbar"
 msgstr ""
 
-#: tdecm_skout.cpp:95
+#: tdecm_leafbar.cpp:95
 msgid "General"
 msgstr ""
 
-#: tdecm_skout.cpp:104
+#: tdecm_leafbar.cpp:104
 msgid "Applets"
 msgstr ""
 
-#: tdecm_skout.cpp:114
+#: tdecm_leafbar.cpp:114
 msgid "Panel position: "
 msgstr ""
 
-#: skout_config.ui:110 tdecm_skout.cpp:122
+#: config.ui:110 tdecm_leafbar.cpp:122
 #, no-c-format
 msgid "Top left"
 msgstr ""
 
-#: skout_config.ui:118 tdecm_skout.cpp:123
+#: config.ui:118 tdecm_leafbar.cpp:123
 #, no-c-format
 msgid "Top right"
 msgstr ""
 
-#: tdecm_skout.cpp:126
+#: tdecm_leafbar.cpp:126
 msgid "Panel width: "
 msgstr ""
 
-#: skout.kcfg:11 skout_config.ui:27
+#: leafbar.kcfg:11 config.ui:27
 #, no-c-format
-msgid "Enable Skout panel"
+msgid "Enable Leafbar panel"
 msgstr ""
 
-#: skout.kcfg:12
+#: leafbar.kcfg:12
 #, no-c-format
-msgid "Enable this option to use the Skout panel instead of Kicker."
+msgid "Enable this option to use the Leafbar panel instead of Kicker."
 msgstr ""
 
-#: skout.kcfg:20
+#: leafbar.kcfg:20
 #, no-c-format
 msgid "Panel position"
 msgstr ""
 
-#: skout.kcfg:21
+#: leafbar.kcfg:21
 #, no-c-format
 msgid "This option defines where on the screen the panel will appear."
 msgstr ""
 
-#: skout.kcfg:25
+#: leafbar.kcfg:25
 #, no-c-format
 msgid "Applets in the panel, top to bottom."
 msgstr ""
 
-#: skout.kcfg:31
+#: leafbar.kcfg:31
 #, no-c-format
 msgid "Panel width, in pixels"
 msgstr ""
 
-#: skout.kcfg:36
+#: leafbar.kcfg:36
 #, no-c-format
 msgid "Pinned windows"
 msgstr ""
 
-#: skout.kcfg:41
+#: leafbar.kcfg:41
 #, no-c-format
 msgid "Enable status widget"
 msgstr ""
 
-#: skout.kcfg:43
+#: leafbar.kcfg:43
 #, no-c-format
 msgid ""
 "Enables the status widget. The status widget is placed in the top of your "
 "system tray and includes a clock and some system sensors (CPU, Memory usage)."
 msgstr ""
 
-#: skout_config.ui:16
+#: config.ui:16
 #, no-c-format
 msgid "Form1"
 msgstr ""
 
-#: skout_config.ui:85
+#: config.ui:85
 #, no-c-format
 msgid "Position:"
 msgstr ""

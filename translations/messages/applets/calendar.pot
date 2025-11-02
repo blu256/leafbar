@@ -27,6 +27,6 @@ msgid ""
 "Your emails"
 msgstr ""
 
-#: skout_calendar.cpp:76
+#: calendar.cpp:76
 msgid "This is a calendar applet."
 msgstr ""
