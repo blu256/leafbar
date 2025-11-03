@@ -56,7 +56,8 @@ static LeafbarPanel *leafbarPanel = nullptr;
 LeafbarPanel::LeafbarPanel()
   : TQFrame(0, "Leafbar", TQt::WStyle_Customize | TQt::WStyle_NoBorder |
                         TQt::WStyle_StaysOnTop | TQt::WDestructiveClose),
-    w_menubtn(nullptr),
+    m_appletContainer(nullptr),
+    m_menuButton(nullptr),
     m_pos(PanelPosition::Saved),
     m_forcePos(false)
 {
@@ -83,16 +84,20 @@ LeafbarPanel::LeafbarPanel()
 
     setWindowType();
 
-    new TQVBoxLayout(this);
-    layout()->setAutoAdd(false);
-    layout()->setMargin(1);
+    m_menuButton = new LeafbarMenuBtn(this);
 
-    w_menubtn = new LeafbarMenuBtn(this);
-    layout()->add(w_menubtn);
+    m_appletContainer = new TQFrame(this);
+    new TQVBoxLayout(m_appletContainer);
+    m_appletContainer->layout()->setMargin(1);
+
+    new TQVBoxLayout(this);
+    layout()->add(m_menuButton);
+    layout()->add(m_appletContainer);
 }
 
 LeafbarPanel::~LeafbarPanel() {
-    ZAP(w_menubtn)
+    ZAP(m_appletContainer)
+    ZAP(m_menuButton)
 }
 
 LeafbarPanel *LeafbarPanel::instance() {
@@ -160,7 +165,9 @@ void LeafbarPanel::applyPosition()
 
 void LeafbarPanel::applySize()
 {
-    setFixedSize(LeafbarSettings::panelWidth(), layout()->minimumSize().height());
+    int height = m_appletContainer->layout()->minimumSize().height()
+               + m_menuButton->minimumSize().height();
+    setFixedSize(LeafbarSettings::panelWidth(), height);
     applyPosition();
 }
 
@@ -259,6 +266,7 @@ bool LeafbarPanel::loadApplet(AppletData &applet) {
     }
 
     connect(applet.ptr, TQ_SIGNAL(updateGeometry()), TQ_SLOT(applySize()));
+    applet.ptr->reparent(m_appletContainer, 0, TQPoint(0, 0));
     applet.ptr->show();
     return true;
 }
@@ -274,7 +282,7 @@ bool LeafbarPanel::addApplet(AppletData &applet) {
             return false;
         }
     }
-    layout()->add(applet.ptr);
+    m_appletContainer->layout()->add(applet.ptr);
     m_applets.append(&applet);
     return true;
 }
@@ -286,7 +294,7 @@ void LeafbarPanel::relayout() {
     AppletData *old = m_applets.first();
     for (; old; old = m_applets.next()) {
         if (!applets.contains(old->id)) {
-            layout()->remove(old->ptr);
+            m_appletContainer->layout()->remove(old->ptr);
             unloadApplet((*old));
         }
     }
@@ -299,7 +307,7 @@ void LeafbarPanel::relayout() {
         AppletData &applet = (*m_appletDB)[(*it)];
         if (applet.ptr)
         {
-            layout()->remove(applet.ptr);
+            m_appletContainer->layout()->remove(applet.ptr);
         }
         addApplet(applet);
     }

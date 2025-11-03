@@ -80,9 +80,10 @@ class LeafbarPanel : public TQFrame {
     void appletsReconfigure();
 
   private:
-    LeafbarMenuBtn *w_menubtn;
     LeafbarAppletDB *m_appletDB;
     LeafbarAppletPanelExtension *m_appletExt;
+    LeafbarMenuBtn *m_menuButton;
+    TQFrame *m_appletContainer;
     AppletList m_applets;
     TDEConfig *m_appletConfig;
 
