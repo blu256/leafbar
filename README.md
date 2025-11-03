@@ -1,4 +1,4 @@
-Leafbar
+Leafbar ![Leafbar logo](data/hi32-app-leafbar.png)
 -------
 
 Leafbar is a panel for TDE in the spirit of Deskbar, the desktop panel of BeOS and now Haiku.
