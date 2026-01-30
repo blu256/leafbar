@@ -35,6 +35,11 @@
       <label>Panel position</label>
       <whatsthis>This option defines where on the screen the panel will appear.</whatsthis>
     </entry>
+    <entry key="Screen" type="Int">
+      <default>-1</default>
+      <label>Screen</label>
+      <whatsthis>The screen on which the panel is displayed.</whatsthis>
+    </entry>
   </group>
   <group name="TaskMan">
     <entry key="PinnedApplications" type="StringList">

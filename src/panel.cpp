@@ -95,20 +95,24 @@ LeafbarPanel::LeafbarPanel()
     layout()->add(m_appletContainer);
 }
 
-LeafbarPanel::~LeafbarPanel() {
+LeafbarPanel::~LeafbarPanel()
+{
     ZAP(m_appletContainer)
     ZAP(m_menuButton)
 }
 
-LeafbarPanel *LeafbarPanel::instance() {
+LeafbarPanel *LeafbarPanel::instance()
+{
     return leafbarPanel;
 }
 
-void LeafbarPanel::showEvent(TQShowEvent *e) {
+void LeafbarPanel::showEvent(TQShowEvent *e)
+{
     reconfigure();
 }
 
-void LeafbarPanel::setPosition(PanelPosition pos, bool force) {
+void LeafbarPanel::setPosition(PanelPosition pos, bool force)
+{
     m_pos = pos;
     m_forcePos = force;
     if (isShown())
@@ -140,16 +144,15 @@ void LeafbarPanel::reloadApplet(TQString appletId)
 
 TQPoint LeafbarPanel::originPos() const
 {
-    TQRect desktop = TQApplication::desktop()->geometry();
-    switch (position()) {
+    TQRect desktop = TQApplication::desktop()->screenGeometry(LeafbarSettings::screen());
+    switch (position())
+    {
         case PanelPosition::TopLeft:
             return desktop.topLeft();
-            break;
 
         case PanelPosition::TopRight:
         default:
             return desktop.topRight() - TQPoint(LeafbarSettings::panelWidth() - 1, 0);
-            break;
     }
 }
 

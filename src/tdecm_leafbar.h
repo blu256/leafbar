@@ -25,6 +25,7 @@
 class TQGroupBox;
 class TQPushButton;
 class TQButtonGroup;
+class TQComboBox;
 class TQSpinBox;
 class KJanusWidget;
 
@@ -48,6 +49,7 @@ class LeafbarConfig : public TDECModule {
     void appletSelected();
     void appletAbout();
     void appletConfig();
+    void identifyScreens();
 
   protected:
     void loadApplets();
@@ -70,6 +72,7 @@ class LeafbarConfig : public TDECModule {
     TQCheckBox *m_autostart;
     TQCheckBox *m_replaceKicker;
     TQButtonGroup *m_grpPos;
+    TQComboBox *m_screen;
     TQSpinBox *m_width;
 
     // Applets tab

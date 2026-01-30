@@ -23,11 +23,12 @@
 #include <tqcheckbox.h>
 #include <tqradiobutton.h>
 #include <tqpushbutton.h>
+#include <tqcombobox.h>
 #include <tqspinbox.h>
 #include <tqlabel.h>
 #include <tqvbox.h>
-#include <tqhbox.h>
 #include <tqwhatsthis.h>
+#include <tqtimer.h>
 
 // TDE
 #include <tdeaboutapplication.h>
@@ -118,8 +119,27 @@ LeafbarConfig::LeafbarConfig(TQWidget *parent, const char *name, const TQStringL
     VBOX_PAGE_PREPARE(tabGeneral, true)
 
     // Appearance tab
+    TQHBox *screenBox = new TQHBox(tabLook);
+    TQLabel *screenLabel = new TQLabel(i18n("Screen: "), screenBox);
+    m_screen = new TQComboBox(screenBox);
+    m_screen->setSizePolicy(TQSizePolicy::Maximum, TQSizePolicy::Fixed);
+
+    TQPushButton *identify = new TQPushButton(i18n("Identify"), screenBox);
+    identify->setSizePolicy(TQSizePolicy::Maximum, TQSizePolicy::Fixed);
+    connect(identify, TQ_SIGNAL(clicked()), TQ_SLOT(identifyScreens()));
+
+    int screens = TQApplication::desktop()->numScreens();
+    for (int s = 0; s < screens; ++s)
+    {
+        m_screen->insertItem(TQString::number(s + 1));
+    }
+    screenBox->setEnabled(screens > 1);
+
+    connect(m_screen, TQ_SIGNAL(activated(int)), TQ_SLOT(changed()));
+
+
     TQHBox *posBox = new TQHBox(tabLook);
-    TQLabel *posLabel = new TQLabel(i18n("Panel position: "), posBox);
+    TQLabel *posLabel = new TQLabel(i18n("Position: "), posBox);
 
     m_grpPos = new TQButtonGroup(posBox);
     m_grpPos->setSizePolicy(TQSizePolicy::Maximum, TQSizePolicy::Fixed);
@@ -130,11 +150,13 @@ LeafbarConfig::LeafbarConfig(TQWidget *parent, const char *name, const TQStringL
     TQRadioButton *posTopLeft  = new TQRadioButton(i18n("Top left"), m_grpPos);
     TQRadioButton *posTopRight = new TQRadioButton(i18n("Top right"), m_grpPos);
 
+
     TQHBox *widthBox = new TQHBox(tabLook);
-    TQLabel *widthLabel = new TQLabel(i18n("Panel width: "), widthBox);
+    TQLabel *widthLabel = new TQLabel(i18n("Width: "), widthBox);
     m_width = new TQSpinBox(100, 500, 1, widthBox);
 
     tabLook->layout()->add(posBox);
+    tabLook->layout()->add(screenBox);
     tabLook->layout()->add(widthBox);
 
     connect(m_grpPos,    TQ_SIGNAL(clicked(int)),      TQ_SLOT(changed()));
@@ -217,7 +239,8 @@ void LeafbarConfig::appletConfig()
     }
 }
 
-void LeafbarConfig::load() {
+void LeafbarConfig::load()
+{
     LeafbarSettings::self()->readConfig();
 
     // General tab
@@ -226,13 +249,15 @@ void LeafbarConfig::load() {
 
     // Appearance tab
     m_grpPos->setButton(LeafbarSettings::position());
+    m_screen->setCurrentItem(LeafbarSettings::screen());
     m_width->setValue(LeafbarSettings::panelWidth());
 
     // Applets tab
     loadApplets();
 }
 
-void LeafbarConfig::save() {
+void LeafbarConfig::save()
+{
     // Try to install autostart files if needed
     if (m_autostart->isChecked())
     {
@@ -267,6 +292,7 @@ void LeafbarConfig::save() {
     LeafbarSettings::setReplaceKicker(m_replaceKicker->isChecked());
 
     // Appearance tab
+    LeafbarSettings::setScreen(m_screen->currentItem());
     LeafbarSettings::setPosition(m_grpPos->selectedId());
     LeafbarSettings::setPanelWidth(m_width->value());
 
@@ -484,4 +510,33 @@ bool LeafbarConfig::uninstallPanelAutostart()
     return ok;
 }
 
+void LeafbarConfig::identifyScreens()
+{
+    // From Kicker TDECM positiontab_impl.cpp
+    for(int s = 0; s < TQApplication::desktop()->numScreens(); ++s)
+    {
+        TQLabel *screenLabel = new TQLabel(nullptr, "Screen Identify", (WFlags)(WDestructiveClose | WStyle_Customize | WX11BypassWM));
+
+        TQFont identifyFont(TDEGlobalSettings::generalFont());
+        identifyFont.setPixelSize(100);
+        screenLabel->setFont(identifyFont);
+
+        screenLabel->setFrameStyle(TQFrame::Panel);
+        screenLabel->setFrameShadow(TQFrame::Plain);
+
+        screenLabel->setAlignment(TQt::AlignCenter);
+        screenLabel->setNum(s + 1);
+        // BUGLET: we should not allow the identification to be entered again
+        //         until the timer fires.
+        TQTimer::singleShot(1500, screenLabel, TQ_SLOT(close()));
+
+        TQPoint screenCenter(TQApplication::desktop()->screenGeometry(s).center());
+        TQRect targetGeometry(TQPoint(0,0),screenLabel->sizeHint());
+        targetGeometry.moveCenter(screenCenter);
+
+        screenLabel->setGeometry(targetGeometry);
+
+        screenLabel->show();
+    }
+}
 /* kate: replace-tabs true; tab-width 4; */
